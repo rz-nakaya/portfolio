@@ -11,15 +11,15 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>制作者について | LP Portfolio</title>
+<title>制作者について | PORTFOLIO</title>
 <meta name="description" content="LP・Webサイト制作と業務効率化を行う、なかやんの自己紹介とご相談窓口です。">
 <!-- OGP:BEGIN (tools/ogp.py で自動生成。手で編集しない) -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="LP Portfolio">
-<meta property="og:title" content="制作者について | LP Portfolio">
+<meta property="og:site_name" content="PORTFOLIO">
+<meta property="og:title" content="制作者について | PORTFOLIO">
 <meta property="og:description" content="LP・Webサイト制作と業務効率化を行う、なかやんの自己紹介とご相談窓口です。">
-<meta property="og:url" content="https://rz-nakaya.github.io/lp-portfolio/about/">
-<meta property="og:image" content="https://rz-nakaya.github.io/lp-portfolio/assets/ogp/default.jpg">
+<meta property="og:url" content="https://rz-nakaya.github.io/portfolio/about/">
+<meta property="og:image" content="https://rz-nakaya.github.io/portfolio/assets/ogp/default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="ja_JP">
@@ -27,21 +27,40 @@
 <!-- OGP:END -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&display=swap">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style.css?v=20261004">
 </head>
 <body>
 
 <header class="hero hero-sub">
   <div class="container hero-inner">
     <div class="top-row">
-      <a class="logo logo-link" href="../">LP PORTFOLIO</a>
+      <a class="logo logo-link" href="../">PORTFOLIO</a>
       <nav class="top-nav" aria-label="サイト内リンク">
-        <a class="nav-link" href="../#works">WORKS</a>
-        <a class="nav-cta" href="#contact">制作のご相談 →</a>
+        <div class="nav-drop" data-drop>
+          <button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="works-menu">WORKS</button>
+          <div class="mega" id="works-menu">
+            <div class="mega-panel">
+              <div class="mega-col">
+                <div class="mega-head"><a href="../lp/"><span class="en">LANDING PAGE</span><b>LP実績</b></a><span class="count">8作品</span></div>
+                <p class="mega-desc">1ページで申し込み・予約につなげるページと、その改善事例</p>
+                <ul class="mega-list"><li><a href="../beauty-esthe/">サロン・ミモザ <small>美容</small></a></li><li><a href="../legal-consulting/">アオバ法律事務所 <small>士業</small></a></li><li><a href="../cram-school/">スタディブリッジ <small>教育</small></a></li><li><a href="../personal-gym/">BODY SHIFT <small>ジム</small></a></li><li><a href="../restaurant/">炭と旬 いろり <small>飲食</small></a></li><li><a href="../ec-shop/">MORNING ROAST <small>EC</small></a></li><li><a href="../custom-home/">ひなた工務店 <small>住宅</small></a></li><li><a href="../lpo-case/">LPO改善事例 <small>Before/After</small></a></li></ul>
+                <a class="mega-all" href="../lp/">LP実績の一覧へ →</a>
+              </div>
+              <div class="mega-col">
+                <div class="mega-head"><a href="../website/"><span class="en">WEBSITE</span><b>ホームページ実績</b></a><span class="count">2作品</span></div>
+                <p class="mega-desc">会社案内・採用・お問い合わせなど、複数ページで構成するサイト(WordPress制作を含む)</p>
+                <ul class="mega-list single"><li><a href="../corporate-site/">ハルカゼ精工 <small>製造業 · 7ページ</small></a></li><li><a href="../wp-seikotsuin/">みどり整骨院 <small>WordPress · 整骨院</small></a></li></ul>
+                <a class="mega-all" href="../website/">ホームページ実績の一覧へ →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="nav-link" href="../about/">ABOUT</a>
+        <a class="nav-cta" href="../about/#contact">制作のご相談 →</a>
       </nav>
     </div>
     <h1>制作者について</h1>
-    <a class="back" href="../">← 制作実績一覧へ戻る</a>
+    <a class="back" href="../">← トップへ戻る</a>
   </div>
 </header>
 
@@ -56,7 +75,7 @@
       </div>
       <div class="profile-body">
         <p class="eyebrow">ABOUT</p>
-        <h2 id="about-title">このページのLPは、<br>なかやんが制作しています。</h2>
+        <h2 id="about-title">このポートフォリオの作品は、<br>なかやんが制作しています。</h2>
         <p>HTML/CSS/JavaScriptを中心に、LP・Webサイトのコーディングを行っています。デザインカンプや参考サイトをもとにしたレスポンシブ対応、フォームの設置、JavaScriptでのちょっとした動きの実装が得意です。</p>
         <p>Web制作のほか、勤怠の入力や表への転記といった毎月の手作業を自動化する小さなツールづくりもしています。最近はClaude CodeなどのAIエージェントを使った業務効率化を実験中で、試行錯誤の様子をXで発信しています。</p>
         <p>丁寧なやり取りと納期を守ることを大切にしています。イメージが固まっていない段階でも、お気軽にご相談ください。</p>
@@ -133,11 +152,20 @@
 </script>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div><a class="footer-link" href="../">制作実績一覧</a></div>
-    <div>rz-nakaya / lp-portfolio</div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="../">PORTFOLIO</a>
+      <p>なかやんの制作実績集です。掲載作品はすべて架空の企業・サービスを題材にしたサンプルで、実在の団体・人物とは関係ありません。</p>
+    </div>
+    <nav class="footer-cols" aria-label="フッターナビゲーション">
+      <div><h2>WORKS</h2><ul><li><a href="../lp/">LP実績</a></li><li><a href="../website/">ホームページ実績</a></li></ul></div>
+      <div><h2>ABOUT</h2><ul><li><a href="../about/">制作者について</a></li></ul></div>
+      <div><h2>CONTACT</h2><ul><li><a href="../about/#contact">制作のご相談</a></li></ul></div>
+    </nav>
   </div>
+  <div class="container footer-bottom"><span><a class="footer-link" href="../">トップ</a></span><span>rz-nakaya / portfolio</span></div>
 </footer>
+<script src="../assets/nav.js?v=20261004"></script>
 
 </body>
 </html>

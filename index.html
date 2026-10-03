@@ -11,15 +11,15 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LP制作実績ポートフォリオ | LP Portfolio</title>
-<meta name="description" content="LP制作の受注に向けた実績づくりとして、代表的な7ジャンルで試作したランディングページ集です。">
+<title>PORTFOLIO | LP・ホームページ制作実績</title>
+<meta name="description" content="LP・ホームページ制作の受注に向けた実績づくりとして、架空の企業・サービスを題材に制作したサンプル集です。LP実績とホームページ実績に分けて掲載しています。">
 <!-- OGP:BEGIN (tools/ogp.py で自動生成。手で編集しない) -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="LP Portfolio">
-<meta property="og:title" content="LP制作実績ポートフォリオ | LP Portfolio">
-<meta property="og:description" content="LP制作の受注に向けた実績づくりとして、代表的な7ジャンルで試作したランディングページ集です。">
-<meta property="og:url" content="https://rz-nakaya.github.io/lp-portfolio/">
-<meta property="og:image" content="https://rz-nakaya.github.io/lp-portfolio/assets/ogp/default.jpg">
+<meta property="og:site_name" content="PORTFOLIO">
+<meta property="og:title" content="PORTFOLIO | LP・ホームページ制作実績">
+<meta property="og:description" content="LP・ホームページ制作の受注に向けた実績づくりとして、架空の企業・サービスを題材に制作したサンプル集です。LP実績とホームページ実績に分けて掲載しています。">
+<meta property="og:url" content="https://rz-nakaya.github.io/portfolio/">
+<meta property="og:image" content="https://rz-nakaya.github.io/portfolio/assets/ogp/default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="ja_JP">
@@ -27,196 +27,79 @@
 <!-- OGP:END -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700;900&display=swap">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20261004">
 </head>
 <body>
 
 <header class="hero">
   <div class="container hero-inner">
     <div class="top-row">
-      <div class="logo">LP PORTFOLIO</div>
+      <a class="logo logo-link" href="./">PORTFOLIO</a>
       <nav class="top-nav" aria-label="サイト内リンク">
-        <a class="nav-link" href="#works">WORKS</a>
-        <a class="nav-link" href="./about/">ABOUT</a>
-        <span class="badge">Portfolio Sample</span>
-        <a class="nav-cta" href="./about/#contact">制作のご相談 →</a>
+        <div class="nav-drop" data-drop>
+          <button type="button" class="nav-drop-btn" aria-expanded="false" aria-controls="works-menu">WORKS</button>
+          <div class="mega" id="works-menu">
+            <div class="mega-panel">
+              <div class="mega-col">
+                <div class="mega-head"><a href="lp/"><span class="en">LANDING PAGE</span><b>LP実績</b></a><span class="count">8作品</span></div>
+                <p class="mega-desc">1ページで申し込み・予約につなげるページと、その改善事例</p>
+                <ul class="mega-list"><li><a href="beauty-esthe/">サロン・ミモザ <small>美容</small></a></li><li><a href="legal-consulting/">アオバ法律事務所 <small>士業</small></a></li><li><a href="cram-school/">スタディブリッジ <small>教育</small></a></li><li><a href="personal-gym/">BODY SHIFT <small>ジム</small></a></li><li><a href="restaurant/">炭と旬 いろり <small>飲食</small></a></li><li><a href="ec-shop/">MORNING ROAST <small>EC</small></a></li><li><a href="custom-home/">ひなた工務店 <small>住宅</small></a></li><li><a href="lpo-case/">LPO改善事例 <small>Before/After</small></a></li></ul>
+                <a class="mega-all" href="lp/">LP実績の一覧へ →</a>
+              </div>
+              <div class="mega-col">
+                <div class="mega-head"><a href="website/"><span class="en">WEBSITE</span><b>ホームページ実績</b></a><span class="count">2作品</span></div>
+                <p class="mega-desc">会社案内・採用・お問い合わせなど、複数ページで構成するサイト(WordPress制作を含む)</p>
+                <ul class="mega-list single"><li><a href="corporate-site/">ハルカゼ精工 <small>製造業 · 7ページ</small></a></li><li><a href="wp-seikotsuin/">みどり整骨院 <small>WordPress · 整骨院</small></a></li></ul>
+                <a class="mega-all" href="website/">ホームページ実績の一覧へ →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="nav-link" href="about/">ABOUT</a>
+        <a class="nav-cta" href="about/#contact">制作のご相談 →</a>
       </nav>
     </div>
-    <h1>7つの業種で証明する、<br>成果につながるLP。</h1>
-    <p class="lead">LP制作の受注に向けた実績づくりとして、代表的な7ジャンルで試作したランディングページ集です。</p>
+    <h1>LPも、ホームページも。<br>目的に合わせて作ります。</h1>
+    <p class="lead">受注に向けた実績づくりとして制作した、架空の企業・サービスのサンプル集です。見たい種類を選んでください。</p>
     <p class="disclaimer">※ いずれも架空のサービス・企業を題材にしたポートフォリオ用サンプルであり、実在の団体・人物とは関係ありません。</p>
   </div>
 </header>
 
-<main class="works container" id="works">
+<main>
+  <section class="cats container" aria-label="実績の種類">
+    <a class="cat" href="./lp/">
+      <div class="cat-shots"><img src="assets/screenshots/esthe-web.jpg" alt="" loading="lazy" width="1280" height="860"><img src="assets/screenshots/restaurant-web.jpg" alt="" loading="lazy" width="1280" height="860"><img src="assets/screenshots/housing-web.jpg" alt="" loading="lazy" width="1280" height="860"></div>
+      <div class="cat-body"><span class="en">LANDING PAGE · 8作品</span><h2>LP実績</h2><p>美容・士業・飲食など7業種のLPと、Before/Afterで見せる改善事例。1ページで申し込み・予約につなげる構成です。</p><span class="go">LP実績の一覧へ →</span></div>
+    </a>
+    <a class="cat" href="./website/">
+      <div class="cat-shots single"><img src="assets/screenshots/corporate-web.jpg" alt="" loading="lazy" width="1280" height="860"></div>
+      <div class="cat-body"><span class="en">WEBSITE · 2作品</span><h2>ホームページ実績</h2><p>会社案内・事業紹介・採用・お問い合わせまでそろえた、複数ページで構成する会社のホームページと、お店側で更新できるWordPressサイトです。</p><span class="go">ホームページ実績の一覧へ →</span></div>
+    </a>
+  </section>
 
-  <article class="work">
-    <div class="work-text">
-      <div class="work-index" style="color:#e2a1a8;">01</div>
-      <div class="work-tag" style="color:#c97c86;">BEAUTY / ESTHE</div>
-      <h2>サロン・ミモザ</h2>
-      <p>全身脱毛・美肌ケアサロンの予約LP。あたたかみのある配色とやさしい訴求で来店へつなげる構成。</p>
-      <a class="work-link" href="./beauty-esthe/">このLPを見る →</a>
-    </div>
-    <div class="work-shots">
-      <figure class="shot shot-web">
-        <a href="./beauty-esthe/"><img src="assets/screenshots/esthe-web.jpg" alt="サロン・ミモザ LP(Web版)のスクリーンショット" loading="lazy" width="1280" height="860"></a>
-        <figcaption>WEB</figcaption>
-      </figure>
-      <figure class="shot shot-mobile">
-        <a href="./beauty-esthe/"><img src="assets/screenshots/esthe-mobile.jpg" alt="サロン・ミモザ LP(モバイル版)のスクリーンショット" loading="lazy" width="390" height="844"></a>
-        <figcaption>MOBILE</figcaption>
-      </figure>
-    </div>
-  </article>
-
-  <article class="work reverse">
-    <div class="work-text">
-      <div class="work-index" style="color:#c9a35a;">02</div>
-      <div class="work-tag" style="color:#9c7d3a;">LEGAL / ADVISORY</div>
-      <h2>アオバ法律事務所</h2>
-      <p>相続・離婚・企業法務の相談LP。ネイビー×ゴールドで信頼感を軸にした構成。</p>
-      <a class="work-link" href="./legal-consulting/">このLPを見る →</a>
-    </div>
-    <div class="work-shots">
-      <figure class="shot shot-web">
-        <a href="./legal-consulting/"><img src="assets/screenshots/legal-web.jpg" alt="アオバ法律事務所 LP(Web版)のスクリーンショット" loading="lazy" width="1280" height="860"></a>
-        <figcaption>WEB</figcaption>
-      </figure>
-      <figure class="shot shot-mobile">
-        <a href="./legal-consulting/"><img src="assets/screenshots/legal-mobile.jpg" alt="アオバ法律事務所 LP(モバイル版)のスクリーンショット" loading="lazy" width="390" height="844"></a>
-        <figcaption>MOBILE</figcaption>
-      </figure>
-    </div>
-  </article>
-
-  <article class="work">
-    <div class="work-text">
-      <div class="work-index" style="color:#2b6cb0;">03</div>
-      <div class="work-tag" style="color:#2b6cb0;">EDUCATION</div>
-      <h2>スタディブリッジ</h2>
-      <p>学習塾・資格講座のオンライン案内LP。ブルー×グリーンで清潔感と信頼を演出。</p>
-      <a class="work-link" href="./cram-school/">このLPを見る →</a>
-    </div>
-    <div class="work-shots">
-      <figure class="shot shot-web">
-        <a href="./cram-school/"><img src="assets/screenshots/cram-web.jpg" alt="スタディブリッジ LP(Web版)のスクリーンショット" loading="lazy" width="1280" height="860"></a>
-        <figcaption>WEB</figcaption>
-      </figure>
-      <figure class="shot shot-mobile">
-        <a href="./cram-school/"><img src="assets/screenshots/cram-mobile.jpg" alt="スタディブリッジ LP(モバイル版)のスクリーンショット" loading="lazy" width="390" height="844"></a>
-        <figcaption>MOBILE</figcaption>
-      </figure>
-    </div>
-  </article>
-
-  <article class="work reverse">
-    <div class="work-text">
-      <div class="work-index" style="color:#ff4b3e;">04</div>
-      <div class="work-tag" style="color:#d92c1f;">FITNESS / GYM</div>
-      <h2>BODY SHIFT</h2>
-      <p>2ヶ月完全個室のパーソナルジムLP。専属トレーナー・成果保証制度を軸に、ダーク×レッドで「本気」を訴求する構成。</p>
-      <a class="work-link" href="./personal-gym/">このLPを見る →</a>
-    </div>
-    <div class="work-shots">
-      <figure class="shot shot-web">
-        <a href="./personal-gym/"><img src="assets/screenshots/gym-web.jpg" alt="BODY SHIFT LP(Web版)のスクリーンショット" loading="lazy" width="1280" height="860"></a>
-        <figcaption>WEB</figcaption>
-      </figure>
-      <figure class="shot shot-mobile">
-        <a href="./personal-gym/"><img src="assets/screenshots/gym-mobile.jpg" alt="BODY SHIFT LP(モバイル版)のスクリーンショット" loading="lazy" width="390" height="844"></a>
-        <figcaption>MOBILE</figcaption>
-      </figure>
-    </div>
-  </article>
-
-  <article class="work">
-    <div class="work-text">
-      <div class="work-index" style="color:#b8873b;">05</div>
-      <div class="work-tag" style="color:#8e6424;">RESTAURANT / DINING</div>
-      <h2>炭と旬 いろり</h2>
-      <p>炭火焼と旬菜の和食ダイニングの予約LP。お品書き・宴会コースを見せ、濃い茶×金と明朝体で上質な夜の時間を演出する構成。</p>
-      <a class="work-link" href="./restaurant/">このLPを見る →</a>
-    </div>
-    <div class="work-shots">
-      <figure class="shot shot-web">
-        <a href="./restaurant/"><img src="assets/screenshots/restaurant-web.jpg" alt="炭と旬 いろり LP(Web版)のスクリーンショット" loading="lazy" width="1280" height="860"></a>
-        <figcaption>WEB</figcaption>
-      </figure>
-      <figure class="shot shot-mobile">
-        <a href="./restaurant/"><img src="assets/screenshots/restaurant-mobile.jpg" alt="炭と旬 いろり LP(モバイル版)のスクリーンショット" loading="lazy" width="390" height="844"></a>
-        <figcaption>MOBILE</figcaption>
-      </figure>
-    </div>
-  </article>
-
-  <article class="work reverse">
-    <div class="work-text">
-      <div class="work-index" style="color:#d98b3a;">06</div>
-      <div class="work-tag" style="color:#2f5d4a;">EC / SUBSCRIPTION</div>
-      <h2>MORNING ROAST</h2>
-      <p>スペシャルティコーヒー定期便の販売LP。他の買い方との比較表と初回お試しオファーで、定期購入への申し込みにつなげる構成。</p>
-      <a class="work-link" href="./ec-shop/">このLPを見る →</a>
-    </div>
-    <div class="work-shots">
-      <figure class="shot shot-web">
-        <a href="./ec-shop/"><img src="assets/screenshots/ec-web.jpg" alt="MORNING ROAST LP(Web版)のスクリーンショット" loading="lazy" width="1280" height="860"></a>
-        <figcaption>WEB</figcaption>
-      </figure>
-      <figure class="shot shot-mobile">
-        <a href="./ec-shop/"><img src="assets/screenshots/ec-mobile.jpg" alt="MORNING ROAST LP(モバイル版)のスクリーンショット" loading="lazy" width="390" height="844"></a>
-        <figcaption>MOBILE</figcaption>
-      </figure>
-    </div>
-  </article>
-
-  <article class="work">
-    <div class="work-text">
-      <div class="work-index" style="color:#c7884a;">07</div>
-      <div class="work-tag" style="color:#23344d;">HOUSING / BUILDER</div>
-      <h2>ひなた工務店</h2>
-      <p>自然素材×高断熱の注文住宅LP。完成までの流れと価格の目安で不安を解消し、資料請求フォームへ誘導する構成。</p>
-      <a class="work-link" href="./custom-home/">このLPを見る →</a>
-    </div>
-    <div class="work-shots">
-      <figure class="shot shot-web">
-        <a href="./custom-home/"><img src="assets/screenshots/housing-web.jpg" alt="ひなた工務店 LP(Web版)のスクリーンショット" loading="lazy" width="1280" height="860"></a>
-        <figcaption>WEB</figcaption>
-      </figure>
-      <figure class="shot shot-mobile">
-        <a href="./custom-home/"><img src="assets/screenshots/housing-mobile.jpg" alt="ひなた工務店 LP(モバイル版)のスクリーンショット" loading="lazy" width="390" height="844"></a>
-        <figcaption>MOBILE</figcaption>
-      </figure>
-    </div>
-  </article>
-  <article class="work reverse">
-    <div class="work-text">
-      <div class="work-index" style="color:#c9a35a;">08</div>
-      <div class="work-tag" style="color:#9c7d3a;">CASE STUDY / LPO</div>
-      <h2>LPO改善事例(Before/After)</h2>
-      <p>設備紹介中心のパーソナルジムLPを、悩み起点のキャッチコピーと迷わない予約導線へ作り替えた改善事例。ファーストビューの5つの改善ポイントを比較で解説。</p>
-      <a class="work-link" href="./lpo-case/">この事例を見る →</a>
-    </div>
-    <div class="work-shots">
-      <figure class="shot shot-web">
-        <a href="./lpo-case/"><img src="assets/screenshots/lpo-web.jpg" alt="LPO改善事例ページ(Web版)のスクリーンショット" loading="lazy" width="1280" height="860"></a>
-        <figcaption>WEB</figcaption>
-      </figure>
-      <figure class="shot shot-mobile">
-        <a href="./lpo-case/"><img src="assets/screenshots/lpo-mobile.jpg" alt="LPO改善事例ページ(モバイル版)のスクリーンショット" loading="lazy" width="390" height="844"></a>
-        <figcaption>MOBILE</figcaption>
-      </figure>
-    </div>
-  </article>
-
+  <section class="home-about container" aria-label="制作者について">
+    <a href="./about/">
+      <span class="txt"><img src="assets/avatar.png" alt="" width="64" height="64"><span><b>制作者: なかやん</b><span>HTML/CSS/JavaScriptでのLP・Webサイト制作と、業務効率化ツールの開発を行っています。</span></span></span>
+      <span class="arrow">制作者について →</span>
+    </a>
+  </section>
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div>各フォルダの index.html をブラウザで開くと表示できます。</div>
-    <div><a class="footer-link" href="./about/">制作者について</a> ・ rz-nakaya / lp-portfolio</div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="./">PORTFOLIO</a>
+      <p>なかやんの制作実績集です。掲載作品はすべて架空の企業・サービスを題材にしたサンプルで、実在の団体・人物とは関係ありません。</p>
+    </div>
+    <nav class="footer-cols" aria-label="フッターナビゲーション">
+      <div><h2>WORKS</h2><ul><li><a href="lp/">LP実績</a></li><li><a href="website/">ホームページ実績</a></li></ul></div>
+      <div><h2>ABOUT</h2><ul><li><a href="about/">制作者について</a></li></ul></div>
+      <div><h2>CONTACT</h2><ul><li><a href="about/#contact">制作のご相談</a></li></ul></div>
+    </nav>
   </div>
+  <div class="container footer-bottom"><span><a class="footer-link" href="./">トップ</a></span><span>rz-nakaya / portfolio</span></div>
 </footer>
+<script src="assets/nav.js?v=20261004"></script>
 
 </body>
 </html>

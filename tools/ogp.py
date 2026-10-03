@@ -6,11 +6,12 @@
     python3 tools/ogp.py          # タグとOGP画像を生成・更新
     python3 tools/ogp.py --check  # 未反映のページがあれば終了コード1(CI用)
 
-- 対象: リポジトリ直下と1階層下の index.html(404.html は対象外)
+- 対象: リポジトリ内のすべての index.html(隠しフォルダ・404.html は対象外)
 - og:title / og:description: 各ページの <title> と <meta name="description"> から取得
-- og:image: トップページの実績カードで `./<フォルダ>/` にリンクしている
+- og:image: 実績一覧ページ(lp/・website/)のカードで `../<フォルダ>/` にリンクしている
   Web版スクリーンショット(*-web.jpg)を 1200x630 に切り出して assets/ogp/<フォルダ>.jpg に保存。
-  該当が無いページ(トップ・about等)は assets/ogp/default.jpg(実績のコラージュ)を使う
+  作品の下層ページ(corporate-site/company/ 等)は作品と同じ画像を使う。
+  該当が無いページ(トップ・一覧・about等)は assets/ogp/default.jpg(実績のコラージュ)を使う
 - タグは <!-- OGP:BEGIN --> 〜 <!-- OGP:END --> の間に書き込むため、何度実行しても重複しない
 """
 import argparse
@@ -19,8 +20,8 @@ import re
 import sys
 from pathlib import Path
 
-BASE_URL = "https://rz-nakaya.github.io/lp-portfolio/"
-SITE_NAME = "LP Portfolio"
+BASE_URL = "https://rz-nakaya.github.io/portfolio/"
+SITE_NAME = "PORTFOLIO"
 OG_W, OG_H = 1200, 630
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -30,17 +31,31 @@ END = "<!-- OGP:END -->"
 BLOCK_RE = re.compile(r"[ \t]*<!-- OGP:BEGIN.*?<!-- OGP:END -->\n?", re.S)
 
 
+LIST_PAGES = ["lp/index.html", "website/index.html"]
+
+
 def find_pages():
-    pages = [ROOT / "index.html"]
-    pages += sorted(p for p in ROOT.glob("*/index.html") if not p.parent.name.startswith("."))
-    return [p for p in pages if p.exists()]
+    pages = sorted(ROOT.rglob("index.html"), key=lambda p: (len(p.parts), p.as_posix()))
+    return [p for p in pages if not any(part.startswith(".") for part in p.relative_to(ROOT).parts)]
+
+
+def page_slug(page):
+    """作品のフォルダ名(下層ページなら最上位のフォルダ名)。トップは空文字。"""
+    parts = page.parent.relative_to(ROOT).parts
+    return parts[0] if parts else ""
 
 
 def screenshot_map():
-    """トップページの実績カードから {フォルダ名: Web版スクショのパス} を作る。"""
-    top = (ROOT / "index.html").read_text(encoding="utf-8")
-    pairs = re.findall(r'<a href="\./([^/"]+)/"><img src="(assets/screenshots/[^"]+-web\.jpg)"', top)
-    return {slug: ROOT / src for slug, src in pairs}
+    """実績一覧ページのカードから {フォルダ名: Web版スクショのパス} を作る。"""
+    shots = {}
+    for rel in LIST_PAGES:
+        page = ROOT / rel
+        if not page.exists():
+            continue
+        text = page.read_text(encoding="utf-8")
+        pairs = re.findall(r'<a href="\.\./([^/"]+)/"><img src="\.\./(assets/screenshots/[^"]+-web\.jpg)"', text)
+        shots.update({slug: ROOT / src for slug, src in pairs})
+    return shots
 
 
 def crop_to_ogp(src, dst):
@@ -97,8 +112,8 @@ def page_meta(text):
 
 
 def render_block(page, text, image):
-    slug = "" if page.parent == ROOT else page.parent.name
-    url = BASE_URL + (f"{slug}/" if slug else "")
+    rel_dir = page.parent.relative_to(ROOT).as_posix()
+    url = BASE_URL + ("" if rel_dir == "." else f"{rel_dir}/")
     image_url = BASE_URL + image.relative_to(ROOT).as_posix()
     title, desc = page_meta(text)
     e = lambda s: html.escape(s, quote=True)
@@ -145,8 +160,7 @@ def main():
 
     stale = []
     for page in find_pages():
-        slug = "" if page.parent == ROOT else page.parent.name
-        image = images.get(slug) or images[""]
+        image = images.get(page_slug(page)) or images[""]
         if not args.check and not image.exists():
             image = images[""]
         text = page.read_text(encoding="utf-8")
