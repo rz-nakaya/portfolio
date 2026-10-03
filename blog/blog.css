@@ -3,7 +3,7 @@
 .blog-wrap { background: #fbfaf7; }
 
 /* 記事一覧 */
-.post-list { list-style: none; margin: 0; padding: 72px 24px 104px; display: grid; gap: 20px; }
+.post-list { list-style: none; margin: 0 auto; padding: 72px 24px 104px; display: grid; gap: 20px; }
 .post-card { display: grid; grid-template-columns: 280px minmax(0, 1fr); background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .post-card:hover { transform: translateY(-4px); box-shadow: 0 26px 48px rgba(20, 16, 14, 0.12); }
 .post-card img { width: 100%; height: 100%; object-fit: cover; object-position: top center; aspect-ratio: 16 / 10; }
